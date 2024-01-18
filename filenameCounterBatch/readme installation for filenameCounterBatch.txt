@@ -1,3 +1,4 @@
+[INSTALLATION]
 filenameCounterBatch program usage
 
 1. Download python from https://www.python.org/downloads/
@@ -9,3 +10,7 @@ filenameCounterBatch program usage
 7. Once you are in the folder, type 'python filenameCounterBatch.py'
 8. Program should run.
 9. A finder window should open, navigate to folder and select folder to begin batch count.
+
+V1.01 (18 January 2024)
+Added total file counter.
+Now omitting DS Store files.
