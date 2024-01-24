@@ -8,6 +8,7 @@ from tkinter import filedialog
 print('This character counter script counts the number of characters in a filename sans extension.'
       + ' Names are sorted in numerical ascending order.')
 
+
 x = filedialog.askdirectory()
 folderName = os.listdir(x)
 try: 
@@ -22,6 +23,7 @@ print('Folder selected: ' + x + '\n')
 for i in range(len(folderNameSorted)):
     nameSplit = os.path.splitext(str(folderNameSorted[i]))
     print('The filename contains ' + str(len(nameSplit[0])) + ' characters from [' + folderNameSorted[i] +'].'
-            + ' File type: ' + nameSplit[1])
+                + ' File type: ' + nameSplit[1])
 
 print('\nThere are ' + str(len(folderNameSorted)) + ' files in this folder.')
+
