@@ -3,6 +3,9 @@ import pyperclip
 print("Hullo, how many packs would you like to print out?")
 numberOfPacks = input()
 
+print("What date is it scheduled for release?")
+    dateReleased = input()
+
 for batch in range(int(numberOfPacks)):
     
     print("Hello there, what type is the filename? \n "
@@ -24,8 +27,6 @@ for batch in range(int(numberOfPacks)):
     print('What is the pack name? Pack name will be formatted and copied')
     packName = input()
 
-    print("What date is it scheduled for release?")
-    dateReleased = input()
 
     result = "Sample Pack (" + packType + "): " + packName + " (due: " + dateReleased + ")\n"
     print("\n" + result)
