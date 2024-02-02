@@ -4,7 +4,7 @@ print("Hullo, how many packs would you like to print out?")
 numberOfPacks = input()
 
 print("What date is it scheduled for release?")
-    dateReleased = input()
+dateReleased = input()
 
 for batch in range(int(numberOfPacks)):
     
