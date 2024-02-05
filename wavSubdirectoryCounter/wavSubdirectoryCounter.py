@@ -8,6 +8,7 @@ def count_wav_files(directory):
         for file in files:
             if fnmatch.fnmatch(file, '*.wav'):
                 count += 1
+                print(file)
     return count
 
 directory = filedialog.askdirectory()
