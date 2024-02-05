@@ -17,4 +17,3 @@ def count_wav_files(directory):
 directory = filedialog.askdirectory()
 wav_count = count_wav_files(directory)
 print(f"Number of .wav files in {directory} and its subdirectories: {wav_count}")
-print(wav_count)
