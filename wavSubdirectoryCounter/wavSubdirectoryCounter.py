@@ -8,7 +8,10 @@ def count_wav_files(directory):
         for file in files:
             if fnmatch.fnmatch(file, '*.wav'):
                 count += 1
-                print(file)
+                if len(file) - 4 >= 50:
+                    print(file + " [" + str(len(file) - 4) + " characters]. Please shorten the filename to less than 50.")
+                else:
+                    print(file + " [" + str(len(file) - 4) + " characters].")
     return count
 
 directory = filedialog.askdirectory()
