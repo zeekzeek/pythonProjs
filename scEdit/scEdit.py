@@ -14,7 +14,7 @@ while True:
               + '3. Text replace\n'
               + '4. Remove .DS_Store\n'
               + '5. Check list of files with character count\n'
-              + '6. exit')
+              + '6. Exit program')
     userInput = input()
     
     if userInput == '1':
