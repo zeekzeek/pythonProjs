@@ -9,7 +9,7 @@ window.withdraw()   # this supress the tk window
 
 while True:
     print('Hello, which program would you like to execute?\n'
-            + '1. Add word\n'
+            + '1. Add word at the beginning\n'
               + '2. Remove word\n'
               + '3. Text replace\n'
               + '4. Remove .DS_Store\n'
@@ -24,7 +24,7 @@ while True:
         for prt, pdr, pfn in os.walk(fname):
             print('Folder: ' + prt + '\n' + str(pfn) + '\n')
         
-        print('Insert word to rename in the beginingniniging')
+        print('Insert word at the beginning')
         preName = input()
 
         def add_wav_files(fname):
@@ -51,7 +51,7 @@ while True:
         for prt, pdr, pfn in os.walk(fname):
             print('Folder: ' + prt + '\n' + str(pfn) + '\n')
         
-        print('Insert word to rename in the beginingniniging')
+        print('Please indicate word to remove')
         preName = input()
 
         def remove_wav_files(fname):
@@ -133,8 +133,10 @@ while True:
                 for file in files:
                     if fnmatch.fnmatch(file, '*.wav') and not file.startswith('._'):
                         count += 1
-                        if len(file) - 4 >= 50:
-                            print(file + " [" + str(len(file) - 4) + " characters]. Please shorten the filename to less than 50.")
+                        fullpath = os.path.join(root, file)
+                        sizeText = os.path.getsize(fullpath) / 1000000
+                        if len(file) - 4 >= 50 :
+                            print(file + " [" + str(len(file) - 4) + f" characters]. Please shorten the filename to less than 50. ~Size: {sizeText:.2f}mb~")
                         else:
                             print(file + " [" + str(len(file) - 4) + " characters].")
             return count
