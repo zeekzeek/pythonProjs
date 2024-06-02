@@ -16,7 +16,8 @@ while True:
               + '5. Check list of files with character count\n'
               + '6. Exit program')
     userInput = input()
-    
+
+#------------------------------------------------------------------------------    
     if userInput == '1':
         fname = filedialog.askdirectory()
         os.chdir(fname)
@@ -43,7 +44,8 @@ while True:
             print('Folder: ' + lrt + '\n' + str(lfn) + '\n')
         print('Changes made. Please check. :)\n\n')
         continue
-        
+
+#------------------------------------------------------------------------------
     elif userInput == '2':
         fname = filedialog.askdirectory()
         os.chdir(fname)
@@ -70,7 +72,7 @@ while True:
             print('Folder: ' + lrt + '\n' + str(lfn) + '\n')
         print('Changes made. Please check. :)\n\n')
         continue
-        
+#------------------------------------------------------------------------------
     elif userInput == '3':
         fname = filedialog.askdirectory()
         os.chdir(fname)
@@ -100,7 +102,7 @@ while True:
             print('Folder: ' + lrt + '\n' + str(lfn) + '\n')
         print('Changes made. Please check. :)\n\n')
         continue
-
+#------------------------------------------------------------------------------
     if userInput == '4':
         fname = filedialog.askdirectory()
         os.chdir(fname)
@@ -125,7 +127,7 @@ while True:
 
         print('.DS_Store removed. Please check.\n\n')
         continue
-    
+#------------------------------------------------------------------------------
     if userInput == '5':
         directory = filedialog.askdirectory()
         
@@ -163,7 +165,7 @@ while True:
         else:
             pass
         continue
-
+#------------------------------------------------------------------------------
     if userInput == '6':
         print('Program ended. Bye bye.\n')
         break
