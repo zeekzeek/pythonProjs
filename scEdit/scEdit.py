@@ -140,9 +140,9 @@ while True:
                         fullpath = os.path.join(root, file)
                         sizeText = os.path.getsize(fullpath) / 1000000
                         if len(file) - 4 >= 50 :
-                            print(file + " [" + str(len(file) - 4) + f" characters]. Please shorten the filename to less than 50. ~Size: {sizeText:.2f}mb~")
+                            print(file + " [" + str(len(file) - 4) + f" characters]. Please shorten the filename to less than 50. \n~Size: {sizeText:.2f}mb~")
                         else:
-                            print(file + " [" + str(len(file) - 4) + f" characters]. ~Size: {sizeText:.2f}mb~")
+                            print(file + " [" + str(len(file) - 4) + f" characters]. \n~Size: {sizeText:.2f}mb~")
             return count
 
         def get_size(start_path = '.'):
