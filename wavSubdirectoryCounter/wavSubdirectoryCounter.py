@@ -28,11 +28,36 @@ def get_size(start_path = '.'):
 
     return total_size
 
+def detect_img(start_path = '.'):
+    pic_img = 0
+    for picpath, picdir, picfiles in os.walk(directory):
+        for p in picfiles:
+            if fnmatch.fnmatch(p, '*.jpg'):
+                pic_img += 1
+                picPath = os.path.join(picpath, p)
+                print('[' + p + ']' + ' No. of files detected: ' + str(pic_img))
+            #else:
+                #print('No file detected, please indicate in Airtable and inform Brian.')
+    return pic_img
+            
+
 getSize = get_size() / 1000000
 wav_count = count_wav_files(directory)
 print(f"\nNumber of .wav files in {directory} and its subdirectories: {wav_count}\nTotal size: {getSize:.2f}mb\n")
 
+print('---------------------------------------------------------------------')
+print('ALERTS: \n')
+
+print('Size checker:')
 if getSize > 2000:
-    print('SIZE NEEDS TO BE REDUCED TO UNDER 2GB.\n')
+    print('FAIL: SIZE NEEDS TO BE REDUCED TO UNDER 2GB.\n')
 else:
-    pass
+    print('Pass: Size is adequate.\n')
+
+print('Image checker:')
+no_of_imgs = detect_img()
+if no_of_imgs < 1:
+    print('FAIL: No IMAGE detected, please indicate in Airtable and inform Brian.')
+else:
+    print('Pass: ' + '.jpg images detected: ' + str(no_of_imgs))
+print('---------------------------------------------------------------------\n')
