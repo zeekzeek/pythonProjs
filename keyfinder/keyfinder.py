@@ -20,9 +20,3 @@ for root, dirs, files in os.walk(directory):
             song = KeyFinder(audio_path)
             song.print_key()
             print('====================')
-            
-#print(directory)
-#audio_path='DirtyClubElectrocumbia_3_100_Am_Synths_01_4bars.wav'
-#song = KeyFinder(audio_path)
-
-#song.print_key()
