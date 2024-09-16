@@ -6,6 +6,17 @@ import tkinter as tk
 
 root = tk.Tk()
 
+w = 200
+h = 230
+
+ws = root.winfo_screenwidth()
+hs = root.winfo_screenheight()
+
+x = (ws/2) - (w/2)
+y = (hs/2) - (h/2)
+
+root.geometry('%dx%d+%d+%d' % (w, h, x, y))
+
 def beginWord():
         fname = filedialog.askdirectory()
         os.chdir(fname)
@@ -15,7 +26,7 @@ def beginWord():
                 if fnmatch.fnmatch(pfns, '*.wav'):
                     print(pfns)
         
-        print('\nType here to insert word at the beginning')
+        print('\nType below to insert word at the beginning (leave blank to bypass):')
         preName = input()
 
         def add_wav_files(fname):
@@ -44,7 +55,7 @@ def removeWord():
                 if fnmatch.fnmatch(pfns, '*.wav'):
                     print(pfns)
         
-        print('\nPlease indicate word to remove')
+        print('\nType below to indicate word to remove (leave blank to bypass):')
         preName = input()
 
         def remove_wav_files(fname):
@@ -73,10 +84,10 @@ def textReplace():
                 if fnmatch.fnmatch(pfns, '*.wav'):
                     print(pfns)
         
-        print('\nSearch for name to replace')
+        print('\nType name to replace (leave blank to bypass):')
         preName = input()
 
-        print('\nReplace with this word')
+        print('\nReplace with this word (leave blank to bypass):')
         replaceName = input()
 
         def replace_wav_files(fname):
@@ -118,7 +129,7 @@ def dsstoreDel():
         # Call the function to remove .DS_Store files
         remove_ds_store(directory_to_search)
 
-        print('.DS_Store removed. Please check.\n\n')
+        print('.DS_Store removed. Please check.\n')
         print('====================\n')
 
 def directoryChecker():
@@ -182,13 +193,13 @@ def directoryChecker():
             print('Pass: ' + '.jpg images detected: ' + str(no_of_imgs))
         print('---------------------------------------------------------------------\n')
 
-button0 = tk.Button(root, text="Check Directory!", command=directoryChecker)
+button0 = tk.Button(root, text="Directory Checker", command=directoryChecker)
 button0.pack(padx=20, pady=10)
 button1 = tk.Button(root, text="Add Word at Beginning", command=beginWord)
 button1.pack(padx=20, pady=10)
-button2 = tk.Button(root, text="Remove Word", command=removeWord)
+button2 = tk.Button(root, text="Remove Word in filenames", command=removeWord)
 button2.pack(padx=20, pady=10)
-button3 = tk.Button(root, text="Text Replace", command=textReplace)
+button3 = tk.Button(root, text="Text Replacer", command=textReplace)
 button3.pack(padx=20, pady=10)
 button4 = tk.Button(root, text="Remove .DS_Store", command=dsstoreDel)
 button4.pack(padx=20, pady=10)
