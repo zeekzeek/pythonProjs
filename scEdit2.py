@@ -6,7 +6,7 @@ import tkinter as tk
 
 root = tk.Tk()
 
-w = 200
+w = 350
 h = 230
 
 ws = root.winfo_screenwidth()
@@ -16,6 +16,7 @@ x = (ws/2) - (w/2)
 y = (hs/2) - (h/2)
 
 root.geometry('%dx%d+%d+%d' % (w, h, x, y))
+root.title('Sound Content File Checker')
 
 def beginWord():
         fname = filedialog.askdirectory()
