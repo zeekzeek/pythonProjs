@@ -1,0 +1,1 @@
+@py E:/GitHub/pythonProjs/whatson/whatson.py %*
