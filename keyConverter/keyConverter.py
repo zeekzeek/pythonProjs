@@ -75,19 +75,21 @@ for prt, pdr, pfn in os.walk(sampleFile):
         if fnmatch.fnmatch(pfns, '*.wav') and not pfns.startswith('._'):
             mo = defineFormat().search(pfns)
             name, ext = os.path.splitext(pfns)
-            oldKey = mo.group()
-            newKey = keyConverter(oldKey)
-            try:
-                os.rename(prt + '/' + pfns, prt + '/' + pfns.replace(oldKey, newKey))
-                print('[' + pfns + '] '"Key converted from " + oldKey + ' to ' + newKey)
-            except TypeError:
-                print('[' + pfns + "] Unchanged.")
+            if mo != None:
+                oldKey = mo.group()
+                newKey = keyConverter(oldKey)
+                #print(oldKey, pfns)
+                try:
+                    os.rename(prt + '/' + pfns, prt + '/' + pfns.replace(oldKey, newKey))
+                    print('[' + pfns + '] '"Key converted from " + oldKey + ' to ' + newKey)
+                except TypeError:
+                    print('[' + pfns + "] Unchanged.")
 
 print ('\nRESULTS:')
 
 for lrt, ldr, lfn in os.walk(sampleFile):
     for p in lfn:
-        if fnmatch.fnmatch(pfns, '*.wav'):
+        if fnmatch.fnmatch(p, '*.wav'):
             print(p)
 
 
