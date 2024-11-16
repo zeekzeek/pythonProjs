@@ -16,7 +16,7 @@ Bbmin
 
 import re, os
 
-sampleFile = 'Chevy_138_Dbmin_Bass'
+sampleFile = 'Chevy_138_A#min_Bass'
 
 def defineFormat():
     sampleTitleRegex = re.compile(r'_([A-G]#?b?m?(maj|min)?)_')
