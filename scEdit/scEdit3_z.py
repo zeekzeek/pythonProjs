@@ -19,11 +19,10 @@ y = (hs/2) - (h/2)
 root.geometry('%dx%d+%d+%d' % (w, h, x, y))
 root.title('Sound Content File Checker')
 
-#you may change this value to the directory of your choice. has to be a string
-initd = os.getcwd()
+initz = "/Users/haziqkhalid/Desktop/workspace"
 
 def beginWord():
-        fname = filedialog.askdirectory(initialdir = initd)
+        fname = filedialog.askdirectory(initialdir = initz)
         os.chdir(fname)
         print('\nFolder selected:' + str(fname) + '\n')
         for prt, pdr, pfn in os.walk(fname):
@@ -52,7 +51,7 @@ def beginWord():
         print('====================\n')
 
 def removeWord():
-        fname = filedialog.askdirectory(initialdir = initd)
+        fname = filedialog.askdirectory(initialdir = initz)
         os.chdir(fname)
         print('\nFolder selected:' + str(fname) + '\n')
         for prt, pdr, pfn in os.walk(fname):
@@ -81,7 +80,7 @@ def removeWord():
         print('====================\n')
 
 def textReplace():
-        fname = filedialog.askdirectory(initialdir = initd)
+        fname = filedialog.askdirectory(initialdir = initz)
         os.chdir(fname)
         print('\nFolder selected: \n' + str(fname) + '\n')
         for prt, pdr, pfn in os.walk(fname):
@@ -113,7 +112,7 @@ def textReplace():
         print('====================\n')
 
 def dsstoreDel():
-        fname = filedialog.askdirectory(initialdir = initd)
+        fname = filedialog.askdirectory(initialdir = initz)
         os.chdir(fname)
         def remove_ds_store(fname):
         # Iterate over all files and directories in the given directory
@@ -138,7 +137,7 @@ def dsstoreDel():
         print('====================\n')
 
 def directoryChecker():
-        directory = filedialog.askdirectory(initialdir = initd)
+        directory = filedialog.askdirectory(initialdir = initz)
         def count_wav_files(directory):
             count = 0
             for root, dirs, files in os.walk(directory):
@@ -199,7 +198,7 @@ def directoryChecker():
         print('---------------------------------------------------------------------\n')
 
 def keyConverter():
-        sampleFile = filedialog.askdirectory(initialdir = initd)
+        sampleFile = filedialog.askdirectory(initialdir = initz)
         os.chdir(sampleFile)
         print('\nFolder selected:' + str(sampleFile) + '\n')
         for parent, sibling, children in os.walk(sampleFile):
