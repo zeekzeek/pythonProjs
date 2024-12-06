@@ -207,39 +207,39 @@ def keyConverter():
                     print(child)
 
         def defineFormat():
-            sampleTitleRegex = re.compile(r'_([A-G]#?b?m?(maj|min)?)_')
+            sampleTitleRegex = re.compile(r'_([A-G]#?b?(maj|min|m))')
             return sampleTitleRegex
 
         def keyConverter(convert):
-            if convert == r"_Db_" or convert == r"_Dbmaj_":
-                sampleFileNew1 = r"_C#_"
+            if convert == r"_Db" or convert == r"_Dbmaj":
+                sampleFileNew1 = r"_C#"
                 return sampleFileNew1
-            elif convert == "_D#_" or convert == r"_D#maj_":
-                sampleFileNew2 = r"_Eb_"
+            elif convert == "_D#" or convert == r"_D#maj":
+                sampleFileNew2 = r"_Eb"
                 return sampleFileNew2
-            elif convert == r"_Gb_" or convert == r"_Gbmaj_":
-                sampleFileNew3 = r"_F#_"
+            elif convert == r"_Gb" or convert == r"_Gbmaj":
+                sampleFileNew3 = r"_F#"
                 return sampleFileNew3
-            elif convert == r"_G#_" or convert == r"_G#maj_":
-                sampleFileNew4 = r"_Ab_"
+            elif convert == r"_G#" or convert == r"_G#maj":
+                sampleFileNew4 = r"_Ab"
                 return sampleFileNew4
-            elif convert == r"_A#_" or convert == r"_A#maj_":
-                sampleFileNew5 = r"_Bb_"
+            elif convert == r"_A#" or convert == r"_A#maj":
+                sampleFileNew5 = r"_Bb"
                 return sampleFileNew5
-            elif convert == "_Dbm_" or convert == r"_Dbmin_":
-                sampleFileNew6 = r"_C#m_"
+            elif convert == "_Dbm" or convert == r"_Dbmin":
+                sampleFileNew6 = r"_C#m"
                 return sampleFileNew6
-            elif convert == r"_Ebm_" or convert == r"_Ebmin_":
-                sampleFileNew7 = r"_D#m_"
+            elif convert == r"_Ebm" or convert == r"_Ebmin":
+                sampleFileNew7 = r"_D#m"
                 return sampleFileNew7
-            elif convert == r"_Gbm_" or convert == r"_Gbmin_":
-                sampleFileNew8 = r"_F#m_"
+            elif convert == r"_Gbm" or convert == r"_Gbmin":
+                sampleFileNew8 = r"_F#m"
                 return sampleFileNew8
-            elif convert == r"_Abm_" or convert == r"_Abmin_":
-                sampleFileNew9 = r"_G#m_"
+            elif convert == r"_Abm" or convert == r"_Abmin":
+                sampleFileNew9 = r"_G#m"
                 return sampleFileNew9
-            elif convert == r"_A#m_" or convert == r"_A#min_":
-                sampleFileNew10 = r"_Bbm_"
+            elif convert == r"_A#m" or convert == r"_A#min":
+                sampleFileNew10 = r"_Bbm"
                 return sampleFileNew10
             else:
                 pass
